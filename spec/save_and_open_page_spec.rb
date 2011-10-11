@@ -12,14 +12,14 @@ describe Capybara do
       @html = <<-HTML
         <html>
           <head>
-            <script type="text/javascript" src="/javascripts/prototype.js?123"/>
+            <script type="text/javascript" src="/assets/prototype.js?123"/>
           </head>
           <body>
             <h1>test</h1>
             <p>
               Some images (note differing whitespace closing tag):
-              <img src="/images/image1.jpeg" />
-              <img src="/images/image2.jpeg"/>
+              <img src="/assets/image1.jpeg" />
+              <img src="/assets/image2.jpeg"/>
             </p>
             <p>
               Some more in a non-existent directory:
@@ -141,7 +141,7 @@ describe Capybara do
 
       context "asset_root contains some directories" do
         it "should rewrite relative paths to absolute local paths" do
-          test_with_directories([ 'javascripts', 'images' ])
+          test_with_directories([ 'assets' ])
         end
       end
 
